@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" class="w-full h-auto drop-shadow-2xl">
+  <defs>
+    <!-- Royal Metallic Gold Gradient -->
+    <linearGradient id="infinityGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE89E"/>
+      <stop offset="25%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#FFF2C2"/>
+      <stop offset="75%" stop-color="#AA7C11"/>
+      <stop offset="100%" stop-color="#FFE89E"/>
+    </linearGradient>
+
+    <!-- Deep Maroon / Dark Gold Accent for depth -->
+    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4A0E17" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Clip Path for the Photo inside the Heart -->
+    <clipPath id="coupleHeartClip">
+      <path d="M 500,210 
+               C 420,70 190,60 130,230 
+               C 80,380 250,560 500,670 
+               C 750,560 920,380 870,230 
+               C 810,60 580,70 500,210 Z" />
+    </clipPath>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#4A0E17" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Photo Clipped inside Heart -->
+  <g filter="url(#softGlow)">
+    <g clip-path="url(#coupleHeartClip)">
+      <image href="/static/images/couple_portrait.jpg" 
+             x="70" y="80" width="860" height="600" 
+             preserveAspectRatio="xMidYMid slice" />
+      <!-- Subtle warm golden inner border overlay -->
+      <path d="M 500,210 
+               C 420,70 190,60 130,230 
+               C 80,380 250,560 500,670 
+               C 750,560 920,380 870,230 
+               C 810,60 580,70 500,210 Z" 
+            fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="8"/>
+    </g>
+
+    <!-- The Heart + Infinity Outer Frame (Continuous fluid path) -->
+    <!-- Base Heart Frame -->
+    <path d="M 500,210 
+             C 420,70 190,60 130,230 
+             C 80,380 250,560 480,670 
+             C 410,680 270,680 190,730 
+             C 90,795 130,880 240,880 
+             C 370,880 440,750 500,705 
+             C 560,750 630,880 760,880 
+             C 870,880 910,795 810,730 
+             C 730,680 590,680 520,670 
+             C 750,560 920,380 870,230 
+             C 810,60 580,70 500,210 Z" 
+          fill="none" 
+          stroke="#4A0E17" 
+          stroke-width="32" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Gold Metallic Top Layer -->
+    <path d="M 500,210 
+             C 420,70 190,60 130,230 
+             C 80,380 250,560 480,670 
+             C 410,680 270,680 190,730 
+             C 90,795 130,880 240,880 
+             C 370,880 440,750 500,705 
+             C 560,750 630,880 760,880 
+             C 870,880 910,795 810,730 
+             C 730,680 590,680 520,670 
+             C 750,560 920,380 870,230 
+             C 810,60 580,70 500,210 Z" 
+          fill="none" 
+          stroke="url(#infinityGold)" 
+          stroke-width="24" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Inner Golden Filigree Highlight -->
+    <path d="M 500,210 
+             C 420,70 190,60 130,230 
+             C 80,380 250,560 480,670 
+             C 410,680 270,680 190,730 
+             C 90,795 130,880 240,880 
+             C 370,880 440,750 500,705 
+             C 560,750 630,880 760,880 
+             C 870,880 910,795 810,730 
+             C 730,680 590,680 520,670 
+             C 750,560 920,380 870,230 
+             C 810,60 580,70 500,210 Z" 
+          fill="none" 
+          stroke="#FFF2C2" 
+          stroke-width="6" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Center Love Knot Ornament -->
+    <circle cx="500" cy="705" r="9" fill="url(#infinityGold)" stroke="#4A0E17" stroke-width="2"/>
+    <circle cx="500" cy="210" r="8" fill="url(#infinityGold)" stroke="#4A0E17" stroke-width="2"/>
+  </g>
+</svg>

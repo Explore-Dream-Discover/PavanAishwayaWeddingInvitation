@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login &mdash; Wedding RSVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
+  <style>
+    :root {
+      --navy: #1c2333;
+      --gold: #b28c45;
+      --paper: #fbf8f2;
+      --line: #ded3c1;
+    }
+    body {
+      background-color: var(--paper);
+      font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(28, 35, 51, 0.08);
+      text-align: center;
+    }
+    .login-crest {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .login-title {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .login-sub {
+      color: #6c757d;
+      font-size: 0.92rem;
+      margin-bottom: 28px;
+    }
+    .btn-wedding {
+      background-color: var(--navy);
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 12px;
+      border-radius: 6px;
+      width: 100%;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-wedding:hover {
+      background-color: #2b364e;
+      color: #fff;
+    }
+    .form-control:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 0.25rem rgba(178, 140, 69, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="login-crest">C<i>&amp;</i>O</div>
+    <h1 class="login-title">RSVP Admin Portal</h1>
+    <p class="login-sub">Enter your administrator password to view guest responses.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ 'success' if category == 'success' else 'danger' if category in ['error', 'danger'] else 'info' }} alert-dismissible fade show text-start py-2" role="alert">
+            <small>{{ msg }}</small>
+            <button type="button" class="btn-close py-2" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('admin_login') }}">
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label text-muted small fw-bold">Admin Password</label>
+        <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter password" required autofocus>
+      </div>
+      <button type="submit" class="btn btn-wedding mb-3">Sign In to Dashboard</button>
+      <div>
+        <a href="{{ url_for('index') }}" class="text-decoration-none small text-muted">&larr; Return to Wedding Website</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/vendor/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+Placeholder photography
+=======================
+
+Every photograph here is CC0 / Public Domain Mark, sourced via the
+Openverse API — no attribution required, commercial use fine. Where no
+public-domain photograph matched a slot, the file is a generated gradient
+instead; those are marked below and carry no rights at all.
+
+Either way these are placeholders: replace them with your own photography
+before launch. Provenance for each file follows.
+
+estate.jpg
+  Untitled
+  CC0 1.0
+  https://www.rawpixel.com/image/6072242/free-public-domain-cc0-photo
+
+florals.jpg
+  Overhead shot white rose wooden
+  CC0 1.0
+  https://www.rawpixel.com/image/3284502/free-photo-image-white-rose-table
+
+ceremony.jpg
+  Tuin van het huis Kersbergen
+  CC0 1.0
+  https://www.rawpixel.com/image/13732649/tuin-van-het-huis-kersbergen-zeist-1914-lambertus-hendrik-van-berk
+
+reception.jpg
+  person sitting gourmet meal long
+  CC0 1.0
+  https://www.rawpixel.com/image/3282419/free-photo-image-restaurant-table-lunch
+
+stay-inn.jpg
+  Houses architecture close up
+  CC0 1.0
+  https://www.rawpixel.com/image/6040320/photo-image-public-domain-houses-window
+
+stay-rectory.jpg
+  White daisies garden large suburban
+  CC0 1.0
+  https://www.rawpixel.com/image/3303404/free-photo-image-house-arbour-birch
+
+stay-hotel.jpg
+  Free hotel room image
+  CC0 1.0
+  https://www.rawpixel.com/image/5922902/photo-image-public-domain-free-bedroom
+
+couple.jpg
+  Generated gradient placeholder — no photograph, no rights attached.
