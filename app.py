@@ -257,7 +257,7 @@ def export_csv():
     return Response(
         csv_data,
         mimetype="text/csv",
-        headers={"Content-Disposition": "attachment; filename=Pavankumar_Aishwarya_Wedding_RSVPs.csv"}
+        headers={"Content-Disposition": "attachment; filename=Pavan_Kumar_Aishwarya_Wedding_RSVPs.csv"}
     )
 
 
