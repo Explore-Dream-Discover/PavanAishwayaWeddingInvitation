@@ -32,7 +32,7 @@ def main():
     qr_img.save(qr_path)
     print(f"QR code saved: {qr_path}")
 
-    # Read couple infinity image
+    # Read couple infinity image - Use the highest quality full artwork
     couple_img_path = os.path.join(images_dir, "couple_infinity.jpg")
     with open(couple_img_path, "rb") as f:
         couple_b64 = base64.b64encode(f.read()).decode("utf-8")
@@ -40,18 +40,17 @@ def main():
     with open(qr_path, "rb") as f:
         qr_b64 = base64.b64encode(f.read()).decode("utf-8")
 
-    # Auspicious Golden Emblem Motif (Universal floral/diya motif, no Hindi text)
-    emblem_svg = """<svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    # Auspicious Golden Emblem Motif
+    emblem_svg = """<svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="44" stroke="#D4AF37" stroke-width="2" stroke-dasharray="3 3"/>
       <circle cx="50" cy="50" r="38" stroke="#845E16" stroke-width="1.5"/>
       <path d="M50 18C50 18 53 32 66 35C53 38 50 52 50 52C50 52 47 38 34 35C47 32 50 18 50 18Z" fill="#D4AF37" stroke="#845E16" stroke-width="1.5"/>
       <circle cx="50" cy="35" r="4" fill="#8E1638"/>
-      <!-- Decorative Petals -->
       <path d="M50 58C45 66 38 72 38 78C38 84 43 88 50 88C57 88 62 84 62 78C62 72 55 66 50 58Z" fill="#FAF0D6" stroke="#845E16" stroke-width="1.5"/>
       <path d="M50 64V82M45 74H55" stroke="#8E1638" stroke-width="1.5" stroke-linecap="round"/>
     </svg>"""
 
-    # 2. Build Royal Invitation HTML - Clean English (No Hindi), With Compliments from Pradeep Kumar E
+    # 2. Build Royal Invitation HTML with UNCROPPED Heart & Infinity Sketch
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +85,7 @@ def main():
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 24px;
+      padding: 20px;
     }}
     .border-frame {{
       width: 860px;
@@ -98,7 +97,7 @@ def main():
     }}
     .border-inner {{
       border: 1.5px solid #D4AF37;
-      padding: 24px 30px 20px 30px;
+      padding: 22px 28px 18px 28px;
       position: relative;
       background: #FDFBF7;
       background-image: radial-gradient(rgba(212, 175, 55, 0.09) 1.2px, transparent 0);
@@ -119,40 +118,40 @@ def main():
     .center {{ text-align: center; }}
     
     .emblem-box {{
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       text-align: center;
     }}
     .blessing-tag {{
       color: #845E16;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }}
     .invitation-badge {{
       display: inline-block;
       color: #4A0E17;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 5px;
       text-transform: uppercase;
-      padding: 2.5px 20px;
+      padding: 2px 18px;
       border-top: 1.5px solid #D4AF37;
       border-bottom: 1.5px solid #D4AF37;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }}
     .invitation-line {{
       font-family: 'Playfair Display', serif;
-      font-size: 14.5px;
+      font-size: 14px;
       color: #5C1521;
       font-style: italic;
-      line-height: 1.5;
-      margin-bottom: 10px;
+      line-height: 1.45;
+      margin-bottom: 8px;
     }}
     .couple-title {{
       font-family: 'Cinzel', serif;
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       color: #4A0E17;
       letter-spacing: 1.5px;
@@ -161,14 +160,14 @@ def main():
     }}
     .ampersand {{
       font-family: 'Great Vibes', cursive;
-      font-size: 42px;
+      font-size: 40px;
       color: #C59B27;
       font-weight: 400;
       vertical-align: middle;
       margin: 0 8px;
     }}
     
-    /* Couple Image & Details Grid */
+    /* Couple Section - UNMASKED FULL HEART & INFINITY ARTWORK */
     .couple-section {{
       display: flex;
       align-items: center;
@@ -180,8 +179,8 @@ def main():
       flex: 1;
       background: #FFFFFF;
       border: 1.5px solid #EEDDAF;
-      border-radius: 12px;
-      padding: 12px 14px;
+      border-radius: 14px;
+      padding: 14px 16px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }}
@@ -193,7 +192,7 @@ def main():
       text-transform: uppercase;
       color: #845E16;
       background: #FAF0D6;
-      padding: 2px 10px;
+      padding: 2.5px 12px;
       border-radius: 20px;
       margin-bottom: 6px;
     }}
@@ -202,7 +201,7 @@ def main():
       font-size: 21px;
       font-weight: 800;
       color: #4A0E17;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }}
     .parents-line {{
       font-size: 12.5px;
@@ -213,24 +212,34 @@ def main():
       font-weight: 700;
       color: #1A0508;
     }}
-    .artwork-box {{
-      width: 140px;
+
+    /* Full Uncropped Heart & Infinity Medallion */
+    .artwork-card {{
+      width: 205px;
       flex-shrink: 0;
+      background: #FFFFFF;
+      border: 1.5px solid #D4AF37;
+      border-radius: 16px;
+      padding: 8px 10px 8px 10px;
       text-align: center;
+      box-shadow: 0 4px 14px rgba(132, 94, 22, 0.15);
+      position: relative;
     }}
     .artwork-img {{
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3.5px solid #D4AF37;
-      box-shadow: 0 4px 12px rgba(132, 94, 22, 0.25);
+      width: 100%;
+      height: auto;
+      max-height: 175px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
     }}
     .tagline {{
       font-family: 'Great Vibes', cursive;
-      font-size: 17px;
+      font-size: 16px;
       color: #845E16;
-      margin-top: 5px;
+      margin-top: 4px;
+      line-height: 1.2;
     }}
 
     /* Gold Ornate Divider */
@@ -258,7 +267,7 @@ def main():
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }}
     .event-card {{
       background: #FFFFFF;
@@ -312,11 +321,11 @@ def main():
       background: #FFFFFF;
       border: 2px solid #845E16;
       border-radius: 14px;
-      padding: 14px 18px;
+      padding: 13px 18px;
       display: flex;
       align-items: center;
       gap: 18px;
-      margin-bottom: 12px;
+      margin-bottom: 11px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.04);
     }}
     .venue-info {{
@@ -328,7 +337,7 @@ def main():
       letter-spacing: 2px;
       color: #845E16;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }}
     .venue-name {{
       font-family: 'Cinzel', serif;
@@ -356,19 +365,19 @@ def main():
       background: #FAF6EF;
       border: 1.5px dashed #C59B27;
       border-radius: 10px;
-      padding: 8px 12px;
+      padding: 7px 12px;
       width: 195px;
     }}
     .qr-img {{
-      width: 112px;
-      height: 112px;
+      width: 108px;
+      height: 108px;
       display: block;
       margin: 0 auto 5px auto;
       border: 2px solid #FFFFFF;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }}
     .qr-label {{
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 800;
       color: #4A0E17;
       text-transform: uppercase;
@@ -399,7 +408,7 @@ def main():
       border-radius: 20px;
       display: inline-block;
       padding: 4px 18px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }}
     .compliments-text {{
       font-size: 12.5px;
@@ -409,11 +418,6 @@ def main():
     .compliments-highlight {{
       font-weight: 800;
       color: #32060C;
-    }}
-    .family-names {{
-      font-size: 11.5px;
-      color: #555;
-      margin-bottom: 5px;
     }}
     .site-note {{
       font-size: 9.5px;
@@ -431,17 +435,17 @@ def main():
         background: #FAF5ED !important;
       }}
       .page-wrapper {{
-        padding: 10mm !important;
+        padding: 8mm !important;
         min-height: 0 !important;
         height: 297mm !important;
         box-sizing: border-box !important;
       }}
       .border-frame {{
-        width: 190mm !important;
+        width: 194mm !important;
         box-shadow: none !important;
       }}
       .border-inner {{
-        padding: 20px 24px 16px 24px !important;
+        padding: 18px 22px 14px 22px !important;
       }}
     }}
   </style>
@@ -476,7 +480,7 @@ def main():
         </h1>
       </div>
 
-      <!-- Couple Photo & Family Cards -->
+      <!-- Couple Photo & Family Cards - FULL UNCROPPED ARTWORK -->
       <div class="couple-section">
         <!-- Groom Card -->
         <div class="person-card">
@@ -489,8 +493,8 @@ def main():
           </div>
         </div>
 
-        <!-- Center Couple Artwork -->
-        <div class="artwork-box">
+        <!-- Center Full Heart & Infinity Artwork (Uncropped) -->
+        <div class="artwork-card">
           <img src="data:image/jpeg;base64,{couple_b64}" class="artwork-img" alt="Pavan Kumar &amp; Aishwarya">
           <div class="tagline">Two Hearts &bull; One Soul</div>
         </div>
@@ -555,15 +559,10 @@ def main():
         </div>
       </div>
 
-      <!-- Compliments & Warm Regards Footer -->
+      <!-- Compliments Footer -->
       <div class="footer-section">
         <div class="compliments-banner">
           <span class="compliments-text">With Best Compliments From: <span class="compliments-highlight">Pradeep Kumar E</span></span>
-        </div>
-        <div class="family-names">
-          With Warm Regards &amp; Blessings from: <strong>Mr. V. Elango &amp; Mrs. E. Dhanalakshmi</strong> &bull; 
-          <strong>Mr. K. Babu &amp; Mrs. K. Latha</strong> &bull; 
-          <strong>Family &amp; Friends</strong>
         </div>
         <div class="site-note">
           Digital Invitation: pavanaishwayaweddinginvitation.onrender.com
